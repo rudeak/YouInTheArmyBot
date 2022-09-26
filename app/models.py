@@ -54,6 +54,29 @@ class AreaToOrc(BaseModel):
     class Meta:
         table_name = config_db.db_prefix + 'area_to_orc'
 
+class VkArea(BaseModel):
+    area = ForeignKeyField(Areas, backref='vk_area')
+    country_id = IntegerField(default=1, null=False)
+    region_id = IntegerField(null=True)
+    city_id = IntegerField()
+
+    class Meta:
+        table_name = config_db.db_prefix + 'vk_area'
+
+class VkPage(BaseModel):
+    user_id = CharField(max_length=50)
+    link = TextField(null=True)
+
+    class Meta:
+        table_name = config_db.db_prefix + 'vk_area'
+
+class VkPageToOrc(BaseModel):
+    index = IntegerField(default=0, null=True)
+    vk_page = ForeignKeyField(VkPage, backref='vk_page_to_orc')
+
+    class Meta:
+        table_name = config_db.db_prefix + 'vk_page_to_orc'
+
 
 def create_all_tables():
         for cls in sys.modules[__name__].__dict__.values():
