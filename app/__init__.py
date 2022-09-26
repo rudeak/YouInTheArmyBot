@@ -7,7 +7,7 @@ from aiogram.contrib.middlewares.logging import LoggingMiddleware
 from elasticsearch import Elasticsearch
 
 
-es = Elasticsearch(['http://localhost:9200'])
+es = Elasticsearch(['http://localhost:9200'],  basic_auth=("elastic", "$Fkmnfdbcnf1"))
 
 # print ('Start build search indexses')
 # from app.build_indexes import es_index

@@ -181,3 +181,4 @@ oc_tables.py
 /docs/make.bat
 *.db
 Pr*.txt
+config.py
