@@ -179,3 +179,5 @@ oc_tables.py
 .vscode/*
 /docs/Makefile
 /docs/make.bat
+*.db
+Pr*.txt
